@@ -19,10 +19,9 @@ import AboutUsManager from "./pages/AboutUs/AboutUsManager";
 import LiveModerator from "./pages/BoardManager/LiveModerator";
 import AudioRoomList from "./pages/BoardManager/AudioBoard/AudioRoomList";
 import VideoLiveList from "./pages/BoardManager/VideoBoard/VideoLiveList";
-import Support from "./pages/Support/Support";;
+import Support from "./pages/Support/Support";
 import { useAuth } from "./lib/AuthProvider";
 import SignIn from "./AuthPage/SignIn";
-import { ProtectedRoute, ROLES } from "./routes/ProtectedRoute";
 import AdminManagement from "./pages/AdminManagement/AdminManagement";
 
 export default function App() {
@@ -44,108 +43,23 @@ export default function App() {
           <>
             <Route element={<AppLayout />}>
               <Route index path="/" element={<Home />} />
-              
-              <Route path="/admin-management" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN]}>
-                  <AdminManagement />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/users" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <UserList />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/gifts" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <GiftingManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/emojis" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <EmojiManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/id-entry" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <IdEntryManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/frames" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <FrameManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/Coin-manage" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.RESELLER]}>
-                  <CoinManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/level-badge-manage" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <LevelBadgeManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/room-skins" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <RoomSkinManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/agencies" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <AgencyManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/agency/:id" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.AGENCY]}>
-                  <AgencyDetails />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/theme-upload" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <ThemeManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/about-us" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <AboutUsManager />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/audio-board" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <AudioRoomList />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/video-board" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <VideoLiveList />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/live-moderate/:mode/:roomId" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN]}>
-                  <LiveModerator />
-                </ProtectedRoute>
-              } />
-
-              <Route path="/support" element={
-                <ProtectedRoute allowedRoles={[ROLES.MOTHER, ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.AGENCY, ROLES.RESELLER]}>
-                  <Support />
-                </ProtectedRoute>
-              } />
+              <Route path="/admin-management" element={<AdminManagement />} />
+              <Route path="/users" element={<UserList />} />
+              <Route path="/gifts" element={<GiftingManager />} />
+              <Route path="/emojis" element={<EmojiManager />} />
+              <Route path="/id-entry" element={<IdEntryManager />} />
+              <Route path="/frames" element={<FrameManager />} />
+              <Route path="/Coin-manage" element={<CoinManager />} />
+              <Route path="/level-badge-manage" element={<LevelBadgeManager />} />
+              <Route path="/room-skins" element={<RoomSkinManager />} />
+              <Route path="/agencies" element={<AgencyManager />} />
+              <Route path="/agency/:id" element={<AgencyDetails />} />
+              <Route path="/theme-upload" element={<ThemeManager />} />
+              <Route path="/about-us" element={<AboutUsManager />} />
+              <Route path="/audio-board" element={<AudioRoomList />} />
+              <Route path="/video-board" element={<VideoLiveList />} />
+              <Route path="/live-moderate/:mode/:roomId" element={<LiveModerator />} />
+              <Route path="/support" element={<Support />} />
             </Route>
 
             <Route path="/signin" element={<Navigate to="/" replace />} />

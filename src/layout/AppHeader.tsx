@@ -87,7 +87,7 @@ const AppHeader: React.FC = () => {
             <div className="w-8 h-8 bg-blue-950 rounded-lg flex items-center justify-center text-white font-bold rotate-180">
               <LuSquareDashedKanban size={24}  />
             </div>
-            <h1 className="font-bold text-xl dark:text-white">AdminPanel</h1>
+            <h1 className="font-bold text-xl dark:text-white">JS-Live</h1>
           </Link>
 
           <button
